@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Losowanie_uczniow_JK.MainPage">
+
+    <ContentPage.Resources>
+        <StyleSheet Source="Resources/Styles.css" />
+    </ContentPage.Resources>
+    <ScrollView>
+        <StackLayout StyleId="mainPage">
+            <Label Text="Imię:" Margin="15"/>
+            <Entry x:Name="nameEntry" StyleClass="entry" MaximumWidthRequest="500"/>
+            <Label Text="Nazwisko:" Margin="15"/>
+            <Entry x:Name="surnameEntry" StyleClass="entry" MaximumWidthRequest="500"/>
+            <Label Text="Numer:" Margin="15"/>
+            <Entry x:Name="numberEntry" IsReadOnly="True" Text="1" StyleClass="entry" MaximumWidthRequest="500"/>
+
+            <StackLayout StyleClass="buttons" Margin="30">
+                <StackLayout Orientation="Vertical">
+                    <Button Text="Dodaj ucznia" Clicked="DodajUczniaInterakcja" StyleClass="button" />
+                    <Button Text="Edytuj dane uczniów" Clicked="EdytujUczniaInterakcja" StyleClass="button" />
+
+                    <Button Text="Wyświetl uczniów" Clicked="PokazUczniowInterakcja" StyleClass="button" />
+                    <Button Text="Wylosuj ucznia z listy" Clicked="LosowyUczenInterakcja" StyleClass="button" />
+
+                    <Button Text="Włącz szczęśliwy numerek" Clicked="WlaczSzczesliwyNumerekInterakcja" StyleClass="button" />
+                    <Button Text="Wyłącz szczęśliwy numerek" Clicked="WylaczSzczesliwyNumerekInterakcja" StyleClass="button"/>
+
+                    <Button x:Name="absentLabel" Text="Włącz nieobecnych uczniów" Clicked="WlaczNieobecnychUczniowInterakcja" StyleClass="button"/>
+                    <Button Text="Wybierz nieobecnych uczniów" Clicked="DodajNieobecnychUczniowInterakcja" StyleClass="button" />
+
+                    <Button Text="Zapisz listę" Clicked="ZapiszDoPliku" StyleClass="button" />
+                    <Button Text="Załaduj listę" Clicked="ZaladujZPliku" StyleClass="button" />
+                </StackLayout>
+                <Label x:Name="luckyNumberLabel"  StyleClass="luckynumber" />
+            </StackLayout>
+        </StackLayout>
+    </ScrollView>
+
+</ContentPage>
